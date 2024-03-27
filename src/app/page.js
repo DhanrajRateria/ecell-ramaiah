@@ -38,10 +38,14 @@ export default function Home() {
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    setTimeout(() => {
+      setPosition({ x: 0, y: 0 });
+    }, 300);
   };
 
   return (
-    <main className="flex flex-col items-center justify-between p-24 min-h-screen">
+    <main className="flex flex-col items-center justify-between p-24 min-h-screen" onMouseMove={handleMouseMove}
+    onMouseUp={handleMouseUp}>
       <Navbar />
       <div className="flex flex-col items-center justify-center mt-24 text-center text-white max-md:mt-10 max-md:max-w-full">
         <h1 className="text-8xl font-bold leading-[88px] tracking-[4.7px]">
@@ -53,6 +57,25 @@ export default function Home() {
         <button className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
           Get started
         </button>
+        <div
+          className="cursor-move ml-4"
+          onMouseDown={handleMouseDown}
+          style={{
+            position: "absolute",
+            top: position.y,
+            left: position.x,
+            zIndex: isDragging ? 9999 : 1,
+            transition: "top 0.3s ease, left 0.3s ease",
+          }}
+        >
+          <Image
+            src="/images/sphere.png"
+            alt="Movable Image"
+            width={200}
+            height={200}
+            className="rotate-[-38deg] rounded-[240.5px]"
+          />
+        </div>
       </div>
       <div className="self-center mt-16 text-5xl font-bold text-white bg-clip-text leading-[66px] max-md:max-w-full">
         About us

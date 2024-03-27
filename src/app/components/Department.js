@@ -1,5 +1,6 @@
-import React from "react";
-import Image from "next/image"
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import("next/image"));
 
 const Department = ({ image, name }) => {
   return (
@@ -8,8 +9,9 @@ const Department = ({ image, name }) => {
         loading="lazy"
         src={image}
         alt={name}
-              className="w-20 h-20 object-cover rounded-full"
-              width={20} height = {20}
+        className="w-20 h-20 object-cover rounded-full"
+        width={20}
+        height={20}
       />
       <div className="text-white">{name}</div>
     </div>
