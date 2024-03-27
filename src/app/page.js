@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Department from "./components/Department";
+import Footer from "./components/Footer";
+import Image from "next/image"
 
 export default function Home() {
   const departmentsData = [
@@ -12,6 +14,32 @@ export default function Home() {
     { name: "Publicity", image: "/images/Departments/publicity.png" },
     { name: "Design", image: "/images/Departments/design.png" },
   ];
+
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [initialPosition, setInitialPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setInitialPosition({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y,
+    });
+  };
+
+  const handleMouseMove = (e) => {
+    if (isDragging) {
+      setPosition({
+        x: e.clientX - initialPosition.x,
+        y: e.clientY - initialPosition.y,
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
     <main className="flex flex-col items-center justify-between p-24 min-h-screen">
       <Navbar />
@@ -40,10 +68,10 @@ export default function Home() {
       EDC invites various eminent entrepreneurs to deliver lectures in order to educate students about the joys and hardships of entrepreneurship. 
     </p>
     <div className="absolute inset-y-0 left-0 flex items-center ml-4">
-      <img src="/images/vector.png" alt="Vector" className="mt-[-50px] z-20 relative transform -translate-y-1/2" />
+            <Image src="/images/vector.png" alt="Vector" className="mt-[-50px] z-20 relative transform -translate-y-1/2" width={15} height = {15} />
     </div>
     <div className="absolute inset-y-0 right-0 flex items-center mr-4">
-      <img src="/images/vector.png" alt="Vector" className="mt-[-50px] z-20 relative transform -translate-y-1/2" />
+      <Image src="/images/vector.png" alt="Vector" className="mt-[-50px] z-20 relative transform -translate-y-1/2" width={15} height = {15}/>
     </div>
   </div>
   <div className="w-full max-w-[836.10px] bg-zinc-900 rounded-[18.79px] border border-zinc-700 mb-4 relative">
@@ -51,10 +79,10 @@ export default function Home() {
       Guest lectures, workshops, case studies and group discussions are conducted throughout the year to involve students in activities that are essential to be an entrepreneur.
     </p>
     <div className="absolute inset-y-0 left-0 flex items-center ml-4">
-      <img src="/images/vector.png" alt="Vector" className="mt-[-50px] z-20 relative transform -translate-y-1/2" />
+      <Image src="/images/vector.png" alt="Vector" className="mt-[-50px] z-20 relative transform -translate-y-1/2" width={15} height = {15}/>
     </div>
     <div className="absolute inset-y-0 right-0 flex items-center mr-4">
-      <img src="/images/vector.png" alt="Vector" className="mt-[-50px] z-20 relative transform -translate-y-1/2" />
+      <Image src="/images/vector.png" alt="Vector" className="mt-[-50px] z-20 relative transform -translate-y-1/2" width={15} height = {15}/>
     </div>
   </div>
       </div>
@@ -74,6 +102,13 @@ export default function Home() {
           <Department key={index} image={department.image} name={department.name} />
         ))}
       </div>
+      <button className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
+          Explore
+      </button>
+      <div className="mt-96 text-5xl text-justify text-white bg-clip-text leading-[66px] max-md:mt-10">
+      Events
+      </div>
+      <Footer/>
     </main>
   );
 }

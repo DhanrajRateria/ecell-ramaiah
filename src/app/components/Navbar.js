@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react";
-
+import Image from "next/image";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-10 bg-black p-4 transition-all duration-300 ${isScrolled ? "shadow-lg" : ""}`}>
       <div className="container flex justify-between items-center">
-        <img src="/images/logo.png" alt="Logo" className="h-12"/>
+        <Image src="/images/logo.png" alt="Logo" className="h-12" width={100} height = {20}/>
         <nav className="flex space-x-4 text-white text-xl">
           <a href="#event" className="hover:text-gray-300">Event</a>
           <a href="#team" className="hover:text-gray-300">Team</a>
