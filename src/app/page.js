@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Department from "./components/Department";
 import Footer from "./components/Footer";
 import Image from "next/image"
+import RootLayout from "./layout";
+import Link from "next/link";
 
 export default function Home() {
   const departmentsData = [
@@ -44,6 +46,7 @@ export default function Home() {
   };
 
   return (
+    <RootLayout>
     <main className="flex flex-col items-center justify-between p-24 min-h-screen" onMouseMove={handleMouseMove}
     onMouseUp={handleMouseUp}>
       <Navbar />
@@ -125,13 +128,16 @@ export default function Home() {
           <Department key={index} image={department.image} name={department.name} />
         ))}
       </div>
-      <button className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
-          Explore
-      </button>
+      <Link href="/departments">
+  <a className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
+    Explore
+  </a>
+</Link>
       <div className="mt-96 text-5xl text-justify text-white bg-clip-text leading-[66px] max-md:mt-10">
       Events
       </div>
       <Footer/>
-    </main>
-  );
+      </main>
+      </RootLayout>
+      );
 }
