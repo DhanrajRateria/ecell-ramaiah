@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const Image = dynamic(() => import("next/image"));
 
@@ -8,13 +9,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-white py-12">
-      <div className="flex justify-center items-center mb-8">
+    <footer className="footer text-white py-6">
+      <div className="flex justify-center items-center mb-6">
         <Image src="/images/logo.png" alt="Logo" className="h-12 mr-8" width={100} height={50} />
         <Image src="/images/msrit.png" alt="Ramaiah Institute of Technology" className="h-12" width={150} height={50} />
       </div>
-      <p className="text-center my-6">Follow us on social media to stay updated with the latest news and events..!!</p>
-      <div className="flex justify-center items-center mb-6">
+      <p className="text-center my-4">Follow us on social media to stay updated with the latest news and events..!!</p>
+      <div className="flex justify-center items-center mb-4 social-icons">
         <button onClick={() => handleSocialMediaClick('https://www.facebook.com/')}>
           <Image src="/images/social_icons/facebook.png" alt="Facebook" className="h-10 w-10" width={40} height={40} />
         </button>
@@ -25,7 +26,7 @@ const Footer = () => {
           <Image src="/images/social_icons/instagram.png" alt="Instagram" className="h-10 w-10" width={40} height={40} />
         </button>
       </div>
-      <p className="text-center mt-6 text-gray-500">&copy; {new Date().getFullYear()} E-Cell Ramaiah. All rights reserved.</p>
+      <p className="text-center mt-4 text-gray-500">&copy; {new Date().getFullYear()} E-Cell Ramaiah. All rights reserved.</p>
     </footer>
   );
 };

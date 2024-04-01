@@ -25,11 +25,13 @@ const Navbar = () => {
         <Link href="/">
           <Image src="/images/logo.png" alt="Logo" className="h-12" width={100} height={20} />
         </Link>
-        <nav className="flex space-x-4 text-white text-xl">
+        <nav className="flex space-x-8 text-white text-xl items-center">
           <Link href="../events" className="hover:text-gray-300 focus:text-gray-300">Event</Link>
           <Link href="../team" className="hover:text-gray-300 focus:text-gray-300">Team</Link>
           <a href="../magazine" className="hover:text-gray-300 focus:text-gray-300">Magazine</a>
-          <a href="../contact" className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 focus:bg-gray-700 transition duration-200">Contact</a>
+          <div className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 focus:bg-gray-700 transition duration-200">
+            <Link href="../contact">Contact</Link>
+          </div>
         </nav>
       </div>
     </header>

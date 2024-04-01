@@ -22,7 +22,7 @@ const Event = ({ imageUrl, title, objective, activities, description }) => {
         </div>
       </div>
       <div className="relative w-1/3">
-        <Image src={imageUrl} alt="Event" className="w-full h-auto rounded-tr-3xl" />
+        <Image src={imageUrl} alt="Event" width={400} height={400} />
         <div className="absolute bottom-0 left-0 bg-white border-t-2 border-r-2 border-gray-300 w-6 h-6 transform rotate-180"></div>
       </div>
     </div>
