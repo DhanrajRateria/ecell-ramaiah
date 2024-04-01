@@ -1,4 +1,4 @@
-import Layout from "./layout.js";
+import Layout from "../components/layout.js";
 
 const Events = () => {
   return (

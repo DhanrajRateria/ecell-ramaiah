@@ -23,13 +23,13 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 right-0 z-10 bg-black p-4 transition-all duration-300 ${isScrolled ? "shadow-lg" : ""}`}>
       <div className="container flex justify-between items-center">
         <Link href="/">
-          <a><Image src="/images/logo.png" alt="Logo" className="h-12" width={100} height={20} /></a>
+          <Image src="/images/logo.png" alt="Logo" className="h-12" width={100} height={20} />
         </Link>
         <nav className="flex space-x-4 text-white text-xl">
-          <Link href="/events"><a className="hover:text-gray-300 focus:text-gray-300">Event</a></Link>
-          <Link href="/teams"><a className="hover:text-gray-300 focus:text-gray-300">Team</a></Link>
-          <a href="#magazine" className="hover:text-gray-300 focus:text-gray-300">Magazine</a>
-          <a href="#contact" className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 focus:bg-gray-700 transition duration-200">Contact</a>
+          <Link href="../events" className="hover:text-gray-300 focus:text-gray-300">Event</Link>
+          <Link href="../team" className="hover:text-gray-300 focus:text-gray-300">Team</Link>
+          <a href="../magazine" className="hover:text-gray-300 focus:text-gray-300">Magazine</a>
+          <a href="../contact" className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 focus:bg-gray-700 transition duration-200">Contact</a>
         </nav>
       </div>
     </header>

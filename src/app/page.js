@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Image from "next/image"
 import RootLayout from "./layout";
 import Link from "next/link";
+import Event from "./components/Events";
 
 export default function Home() {
   const departmentsData = [
@@ -16,6 +17,31 @@ export default function Home() {
     { name: "Publicity", image: "/images/Departments/publicity.png" },
     { name: "Design", image: "/images/Departments/design.png" },
   ];
+
+const eventsData = [
+    {
+      imageUrl: "/images/events/gfc.png",
+      title: "Goal for Cause",
+      objective: "Fostering team work and spirit.",
+      activities: "Football Matches",
+      description: "Goal for a Cause was an exciting event organized by E-Cell where different clubs enthusiastically competed with each other in the game of football. The event started with the arrival of Mrs. Ashwini Revanath, w/o Late Dr. Puneet Rajkumar, who lit the lamp and inaugurated the program.",
+    },
+    {
+      imageUrl: "/images/events/pradarshana.png",
+      title: "Pradarshana",
+      objective: "Showcasing the latest in technology and innovation.",
+      activities: "Product demos, workshops, tech talks.",
+      description: "Discover cutting-edge technologies and explore how they're shaping the future across various industries.",
+    },
+    {
+      imageUrl: "/images/events/workshop.png",
+      title: "Entrepreneurship Workshop",
+      objective: "To promote entrepreneurship skills in students.",
+      activities: "A workshop on entrepreneurship and the skills required for it was held",
+      description: "Students were told what entrepreneurship actually is, how to do it and the various skills required for it.",
+    },
+  ];
+
 
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -55,7 +81,7 @@ export default function Home() {
           We’re Ecell Ramaiah
         </h1>
         <p className="mt-14 text-xl leading-6">
-          At Ramaiah Institute of Technology, we are the catalysts of tomorrow's entrepreneurs. Welcome to a realm where visionaries thrive. Discover our dynamic network, signature events, and the relentless pursuit of innovation that defines our journey forward.
+          At Ramaiah Institute of Technology, we are the catalysts of tomorrow&apos;s entrepreneurs. Welcome to a realm where visionaries thrive. Discover our dynamic network, signature events, and the relentless pursuit of innovation that defines our journey forward.
         </p>
         <button className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
           Get started
@@ -86,7 +112,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center mt-8 text-center text-white max-md:max-w-full relative space-y-8">
   <div className="w-full max-w-[836.10px] bg-zinc-900 rounded-[18.79px] border border-zinc-700 mb-4 relative">
     <p className="p-8 text-lg leading-7">
-      It's a club for MSRIT students which is dedicated to the development of multidimensional skills. EDC serves as a forum to bring together the heterogeneous culture of students from various disciplines.
+      It&apos;s a club for MSRIT students which is dedicated to the development of multidimensional skills. EDC serves as a forum to bring together the heterogeneous culture of students from various disciplines.
     </p>
   </div>
   <div className="w-full max-w-[836.10px] bg-zinc-900 rounded-[18.79px] border border-zinc-700 mb-4 relative">
@@ -128,16 +154,29 @@ export default function Home() {
           <Department key={index} image={department.image} name={department.name} />
         ))}
       </div>
-      <Link href="/departments">
-  <a className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
+      <Link
+        href="/departments"
+        className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
+  
     Explore
-  </a>
+  
 </Link>
-      <div className="mt-96 text-5xl text-justify text-white bg-clip-text leading-[66px] max-md:mt-10">
+      <div className="self-center mt-16 text-5xl font-bold text-white bg-clip-text leading-[66px] max-md:max-w-full">
       Events
-      </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+          {eventsData.map((event, index) => (
+            <Event key={index} {...event} />
+          ))}
+        </div>
+        <Link
+          href="/events"
+          className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
+        >
+          Explore More
+        </Link>
       <Footer/>
       </main>
       </RootLayout>
-      );
+  );
 }
