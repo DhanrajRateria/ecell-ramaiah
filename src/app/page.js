@@ -8,6 +8,7 @@ import Image from "next/image"
 import RootLayout from "./layout";
 import Link from "next/link";
 import Event from "./components/Events";
+import MovableImage from "./components/MovableImage";
 
 export default function Home() {
   const departmentsData = [
@@ -16,6 +17,15 @@ export default function Home() {
     { name: "PR and Sponsorship", image: "/images/Departments/prands.png" },
     { name: "Publicity", image: "/images/Departments/publicity.png" },
     { name: "Design", image: "/images/Departments/design.png" },
+  ];
+
+  const imageData = [
+    { src: "/images/sphere.png", initialX: 0, initialY: 0 },
+    { src: "/images/fuller.png", initialX: 1300, initialY: 100 },
+    { src: "/images/ring.png", initialX: 200, initialY: 400 },
+    { src: "/images/spring.png", initialX: 1100, initialY: 400 },
+    { src: "/images/solid.png", initialX: 1300, initialY: 800 },
+    { src: "/images/hexagon.png", initialX: 0, initialY: 800 },
   ];
 
 const eventsData = [
@@ -72,10 +82,19 @@ const eventsData = [
   };
 
   return (
+    
     <RootLayout>
     <main className="flex flex-col items-center justify-between p-24 min-h-screen" onMouseMove={handleMouseMove}
     onMouseUp={handleMouseUp}>
-      <Navbar />
+        <Navbar />
+        <div className="container">
+      {imageData.map((image) => (
+        <MovableImage
+          key={image.src} // Unique key for each image
+          {...image} // Spread the image data object as props
+        />
+      ))}
+    </div>
       <div className="flex flex-col items-center justify-center mt-24 text-center text-white max-md:mt-10 max-md:max-w-full">
         <h1 className="text-8xl font-bold leading-[88px] tracking-[4.7px]">
           We’re Ecell Ramaiah
@@ -107,7 +126,26 @@ const eventsData = [
         </div>
       </div>
       <div className="self-center mt-16 text-5xl font-bold text-white bg-clip-text leading-[66px] max-md:max-w-full">
-        About us
+          About us
+          <div
+          className="cursor-move ml-4"
+          onMouseDown={handleMouseDown}
+          style={{
+            position: "absolute",
+            top: position.y,
+            left: position.x,
+            zIndex: isDragging ? 9999 : 1,
+            transition: "top 0.3s ease, left 0.3s ease",
+          }}
+        >
+          <Image
+            src="/images/sphere.png"
+            alt="Movable Image"
+            width={200}
+            height={200}
+            className="rotate-[-38deg] rounded-[240.5px]"
+          />
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center mt-8 text-center text-white max-md:max-w-full relative space-y-8">
   <div className="w-full max-w-[836.10px] bg-zinc-900 rounded-[18.79px] border border-zinc-700 mb-4 relative">
@@ -147,7 +185,7 @@ const eventsData = [
         </p>
       </div>
       <div className="self-center mt-16 text-5xl font-bold text-white bg-clip-text leading-[66px] max-md:max-w-full">
-        The Departments
+          The Departments
       </div>
       <div className="grid grid-cols-2 gap-8 mt-8 max-md:max-w-full">
   {departmentsData.map((department, index) => (
