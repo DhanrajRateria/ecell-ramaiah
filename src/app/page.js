@@ -151,7 +151,7 @@ const eventsData = [
       </div>
       <div className="grid grid-cols-2 gap-8 mt-8 max-md:max-w-full">
   {departmentsData.map((department, index) => (
-    <Department key={index} image={department.image} name={department.name} isLast={index === departmentsData.length - 1} />
+    <Department key={index} image={department.image} name={department.name}/>
   ))}
 </div>
       <Link

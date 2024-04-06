@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/image';
 export function Member(props) {
     return (
       <div className="relative transform overflow-hidden rounded-lg shadow-lg transition duration-300 hover:shadow-2xl lg:hover:-translate-y-2 ">

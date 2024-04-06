@@ -39,3 +39,49 @@ body {
 .footer .social-icons button {
   margin-right: 20px;
 }
+
+.event-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.event-content {
+  flex: 1;
+  padding: 16px;
+}
+
+.event-content .relative {
+  position: relative;
+  height: 200px;
+}
+
+.event-content .aspect-w-16.aspect-h-9 {
+  width: 100%;
+}
+
+.truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.read-more {
+  border: none;
+  background-color: transparent;
+  color: #3182ce;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+@keyframes underline-animate {
+  from { transform: translateY(-3px); }
+  to { transform: translateY(0px); }
+}

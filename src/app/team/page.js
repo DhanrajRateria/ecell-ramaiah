@@ -4,8 +4,8 @@ import { Member } from "../components/Member";
 const Teams = () => {
   const members = [
     // Add 30 members here
-    { name: "John Doe", image: "/images/members/john.jpg", designation: "CEO", link: "#" },
-    { name: "Jane Doe", image: "/images/members/jane.jpg", designation: "CTO", link: "#" },
+    // { name: "John Doe", image: "/images/members/john.jpg", designation: "CEO", link: "#" },
+    // { name: "Jane Doe", image: "/images/members/jane.jpg", designation: "CTO", link: "#" },
     // Add more members as needed
   ];
 

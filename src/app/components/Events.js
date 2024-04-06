@@ -1,29 +1,47 @@
-import React from 'react';
-import Image from 'next/image'
+import React, { useState } from 'react';
+import Image from 'next/image';
 
 const Event = ({ imageUrl, title, objective, activities, description }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleDescription = () => {
+    setExpanded(!expanded);
+  };
+
   return (
-    <div className="flex items-start justify-start relative bg-white rounded-tl-3xl rounded-br-3xl overflow-hidden shadow-md mb-6">
-      <div className="flex-grow px-12 py-12 w-full text-justify">
-        <div className="text-4xl font-semibold bg-clip-text leading-15">
-          {title}
+    <div className="event-container w-full mb-8">
+      <div className="event-content bg-gray-800 border border-gray-400 rounded-lg overflow-hidden">
+        <div className="relative aspect-w-16 aspect-h-9">
+          <Image
+            src={imageUrl}
+            alt="Event"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-t-lg"
+          />
         </div>
-        <div className="mt-14 text-2xl leading-10 bg-clip-text">
-          <p className="font-bold">Objective:</p>
-          <p>{objective}</p>
+        <div className="p-4">
+          <h2 className="text-white text-2xl font-semibold mb-2">{title}</h2>
+          <div className="text-gray-300 mb-4">
+            <p className="font-bold">Objective:</p>
+            <p>{objective}</p>
+          </div>
+          <div className="text-gray-300 mb-4">
+            <p className="font-bold">Activities:</p>
+            <p>{activities}</p>
+          </div>
+          <div className="text-gray-300 mb-4">
+            <p className="font-bold">Description:</p>
+            {expanded ? (
+              <p>{description}</p>
+            ) : (
+              <p className="truncate">{description}</p>
+            )}
+            <button className="read-more" onClick={toggleDescription}>
+              {expanded ? 'Read Less' : 'Read More'}
+            </button>
+          </div>
         </div>
-        <div className="mt-4 text-2xl leading-10 bg-clip-text">
-          <p className="font-bold">Activities:</p>
-          <p>{activities}</p>
-        </div>
-        <div className="mt-4 text-2xl leading-10 bg-clip-text">
-          <p className="font-bold">Description:</p>
-          <p>{description}</p>
-        </div>
-      </div>
-      <div className="relative w-1/3">
-        <Image src={imageUrl} alt="Event" width={400} height={400} />
-        <div className="absolute bottom-0 left-0 bg-white border-t-2 border-r-2 border-gray-300 w-6 h-6 transform rotate-180"></div>
       </div>
     </div>
   );
