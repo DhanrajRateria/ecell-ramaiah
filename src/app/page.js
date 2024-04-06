@@ -150,10 +150,10 @@ const eventsData = [
         The Departments
       </div>
       <div className="grid grid-cols-2 gap-8 mt-8 max-md:max-w-full">
-        {departmentsData.map((department, index) => (
-          <Department key={index} image={department.image} name={department.name} />
-        ))}
-      </div>
+  {departmentsData.map((department, index) => (
+    <Department key={index} image={department.image} name={department.name} isLast={index === departmentsData.length - 1} />
+  ))}
+</div>
       <Link
         href="/departments"
         className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
