@@ -105,25 +105,6 @@ const eventsData = [
         <button className="mt-10 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
           Get started
         </button>
-        <div
-          className="cursor-move ml-4"
-          onMouseDown={handleMouseDown}
-          style={{
-            position: "absolute",
-            top: position.y,
-            left: position.x,
-            zIndex: isDragging ? 9999 : 1,
-            transition: "top 0.3s ease, left 0.3s ease",
-          }}
-        >
-          <Image
-            src="/images/sphere.png"
-            alt="Movable Image"
-            width={200}
-            height={200}
-            className="rotate-[-38deg] rounded-[240.5px]"
-          />
-        </div>
       </div>
       <div className="self-center mt-16 text-5xl font-bold text-white bg-clip-text leading-[66px] max-md:max-w-full">
           About us
