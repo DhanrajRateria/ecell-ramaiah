@@ -90,8 +90,8 @@ const eventsData = [
         <div className="container">
       {imageData.map((image) => (
         <MovableImage
-          key={image.src} // Unique key for each image
-          {...image} // Spread the image data object as props
+          key={image.src}
+          {...image}
         />
       ))}
     </div>
@@ -108,25 +108,6 @@ const eventsData = [
       </div>
       <div className="self-center mt-16 text-5xl font-bold text-white bg-clip-text leading-[66px] max-md:max-w-full">
           About us
-          <div
-          className="cursor-move ml-4"
-          onMouseDown={handleMouseDown}
-          style={{
-            position: "absolute",
-            top: position.y,
-            left: position.x,
-            zIndex: isDragging ? 9999 : 1,
-            transition: "top 0.3s ease, left 0.3s ease",
-          }}
-        >
-          <Image
-            src="/images/sphere.png"
-            alt="Movable Image"
-            width={200}
-            height={200}
-            className="rotate-[-38deg] rounded-[240.5px]"
-          />
-        </div>
       </div>
       <div className="flex flex-col items-center justify-center mt-8 text-center text-white max-md:max-w-full relative space-y-8">
   <div className="w-full max-w-[836.10px] bg-zinc-900 rounded-[18.79px] border border-zinc-700 mb-4 relative">

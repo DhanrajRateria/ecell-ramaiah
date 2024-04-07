@@ -1,5 +1,9 @@
+"use client"
+
 import Layout from "./layout";
 import { Member } from "../components/Member";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Teams = () => {
   const members = [
@@ -11,11 +15,13 @@ const Teams = () => {
 
   return (
     <Layout>
+      <Navbar />
       <div className="grid grid-cols-3 gap-8">
         {members.map((member, index) => (
           <Member key={index} {...member} />
         ))}
       </div>
+      <Footer />
     </Layout>
   );
 };

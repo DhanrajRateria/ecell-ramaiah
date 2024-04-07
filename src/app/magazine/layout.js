@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
-
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -14,8 +13,8 @@ export default function Layout({ children }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Events by EDC</title>
-        <meta name='description' content="The Events of Entrepreneurship Development Cell of RIT" />
+        <title>Contact EDC</title>
+        <meta name='description' content="Reach out to Entrepreneurship Development Cell of RIT" />
       </head>
       <body className={inter.className}>
         {children}

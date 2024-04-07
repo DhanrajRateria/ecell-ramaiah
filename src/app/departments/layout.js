@@ -1,7 +1,5 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -15,13 +13,11 @@ export default function Layout({ children }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Departments of EDC</title>
+        <title>The Departments of EDC</title>
         <meta name='description' content="The Departments of Entrepreneurship Development Cell of RIT" />
       </head>
       <body className={inter.className}>
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
