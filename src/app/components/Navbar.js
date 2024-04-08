@@ -26,9 +26,9 @@ const Navbar = () => {
           <Image src="/images/logo.png" alt="Logo" className="h-12" width={100} height={20} />
         </Link>
         <nav className="flex space-x-8 text-white text-xl items-center">
-          <Link href="../events" className="hover:text-gray-300 px-4 py-2 rounded-lg border border-grey-400 focus:text-gray-300">Event</Link>
-          <Link href="../team" className="hover:text-gray-300 px-4 py-2 rounded-lg border border-grey-400 focus:text-gray-300">Team</Link>
-          <a href="../magazine" className="hover:text-gray-300  px-4 py-2 rounded-lg border border-grey-400 focus:text-gray-300">Magazine</a>
+          <Link href="../events" className="hover:text-gray-300 px-4 py-2 rounded-lg focus:text-gray-300">Event</Link>
+          <Link href="../team" className="hover:text-gray-300 px-4 py-2 rounded-lg  focus:text-gray-300">Team</Link>
+          <a href="../magazine" className="hover:text-gray-300  px-4 py-2 rounded-lg focus:text-gray-300">Magazine</a>
           <div className="px-4 py-2 bg-gray-800 text-white rounded-lg border border-grey-400 hover:bg-gray-700 focus:bg-gray-700 transition duration-200">
             <Link href="../contact">Contact</Link>
           </div>
