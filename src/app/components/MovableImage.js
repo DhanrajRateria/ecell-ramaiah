@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const MovableImage = ({ src, initialX, initialY }) => {

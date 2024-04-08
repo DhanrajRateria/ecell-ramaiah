@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 
 const Event = ({ imageUrl, title, objective, activities, description }) => {
   const [expanded, setExpanded] = useState(false);

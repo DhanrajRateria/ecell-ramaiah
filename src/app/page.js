@@ -149,7 +149,7 @@ const eventsData = [
       <div className="self-center mt-16 text-5xl font-bold text-white bg-clip-text leading-[66px] max-md:max-w-full">
       The Departments
     </div>
-    <div className="grid grid-cols-2 gap-8 mt-8 max-md:max-w-full">
+    <div className="grid grid-cols gap-8 mt-8 max-md:max-w-full">
       {departmentsData.map((department, index) => (
         <Department key={index} image={department.image} name={department.name} />
       ))}
@@ -164,7 +164,7 @@ const eventsData = [
       <div className="self-center mt-16 text-5xl font-bold text-white bg-clip-text leading-[66px] max-md:max-w-full">
       Events
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+        <div className="grid grid-cols gap-8 mt-8 max-md:max-w-full">
           {eventsData.map((event, index) => (
             <Event key={index} {...event} />
           ))}
